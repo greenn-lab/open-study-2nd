@@ -1,0 +1,26 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    id 'war'
+    id "org.gretty" version "3.0.3"
+}
+
+group 'open.study.second'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    implementation "javax:javaee-api:8.0.1"
+}
+
+gretty {
+    httpPort = 8082
+    contextPath = "/"
+}
